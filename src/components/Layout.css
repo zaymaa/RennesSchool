@@ -1,0 +1,138 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #fff;
+  width: 100%;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f6f6f6;
+  min-width: 0;
+}
+
+/* Main content box container */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1380px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-width: 0;
+}
+
+@media (min-width: 769px) {
+  .content {
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 40px; /* Slightly smaller right margin for more width */
+    margin-bottom: 30px;
+    border-radius: 16px;
+    background: #f6f6f6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    max-width: 1350px;
+
+    /* Enable scrolling if content height is too large */
+    max-height: 600px;
+    overflow: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    width: calc(100% - 40px);
+    margin: 10px auto 90px auto;
+    padding: 10px;
+    border-radius: 12px;
+    min-height: auto;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Dark mode background colors */
+.dark-mode .layout {
+  background: #0f0f0f;
+  color: #eaeaea;
+}
+
+.dark-mode main {
+  background: #2f2f2f;
+}
+
+/* Dark mode content box */
+.dark-mode .content {
+  background: #121212;
+  color: #eaeaea;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  border-color: transparent;
+}
+
+/* Dark mode link and text colors */
+.dark-mode .content a {
+  color: #7cc7ff;
+}
+
+.dark-mode .content h1,
+.dark-mode .content h2,
+.dark-mode .content h3 {
+  color: #ffffff;
+}
+
+.dark-mode .content p,
+.dark-mode .content li,
+.dark-mode .content span {
+  color: #e0e0e0;
+}
+
+/* Dark mode divider lines */
+.dark-mode .content hr,
+.dark-mode .content .divider {
+  border-color: #2a2a2a;
+}
+
+/* Desktop dark mode shadow adjustments */
+@media (min-width: 769px) {
+  .dark-mode .content {
+    background: #121212;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Mobile dark mode shadow adjustments */
+@media (max-width: 768px) {
+  .dark-mode .content {
+    background: #121212;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Dark mode scrollbar styling (WebKit browsers) */
+.dark-mode .content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark-mode .content::-webkit-scrollbar-thumb {
+  background: #2b2b2b;
+  border-radius: 8px;
+}
+
+.dark-mode .content::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Dark mode scrollbar styling for Firefox */
+.dark-mode .content {
+  scrollbar-color: #2b2b2b transparent;
+  scrollbar-width: thin;
+}

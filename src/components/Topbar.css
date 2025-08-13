@@ -1,0 +1,196 @@
+:root {
+  --topbar-h: 60px;
+}
+
+.topbar {
+  height: var(--topbar-h);
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative; /* Needed for dropdown positioning */
+  z-index: 10;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.topbar-left img {
+  width: 55px;
+  height: 50px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.topbar-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.topbar-text .hi {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-text .name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.topbar-icons img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+.topbar-icons img.active {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+/* Dropdown container reference */
+.icon-wrapper,
+.notif-wrapper {
+  position: relative;
+}
+
+.dropdown-menu,
+.notif-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  width: 220px;
+  padding: 10px 14px;
+  z-index: 1000;
+}
+
+.dropdown-menu h4,
+.notif-dropdown h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  color: #000;
+}
+
+.dropdown-menu hr,
+.notif-dropdown hr {
+  margin: 6px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.dropdown-text,
+.no-notifs {
+  font-size: 13px;
+  color: #3b82f6;
+}
+
+.dropdown-link {
+  font-size: 13px;
+  color: #1f1f1fce;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 4px 6px;
+}
+
+.dropdown-link:hover {
+  background: #fdfdfd;
+  font-weight: 600;
+}
+
+/* Dark mode */
+.dark-mode .topbar {
+  background-color: #2f2f2f;
+  color: #fff;
+}
+
+.dark-mode .topbar-icons img {
+  background-color: #3a3a3a;
+}
+
+.dark-mode .topbar-icons img:hover {
+  background-color: #4a4a4a;
+}
+
+.dark-mode .dropdown-menu,
+.dark-mode .notif-dropdown {
+  background: #3a3a3a;
+}
+
+.dark-mode .dropdown-link:hover {
+  background: #4a4a4a;
+}
+
+@media (max-width: 768px) {
+  :root { --topbar-h: 65px; }
+
+  .topbar {
+    position: fixed;
+    top: env(safe-area-inset-top, 0);
+    left: 0;
+    width: 100%;
+    height: var(--topbar-h);
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  .topbar-left { gap: 8px; }
+  .topbar-left img { width: 40px; height: 40px; }
+
+  .topbar-text .hi { font-size: 12px; }
+  .topbar-text .name { font-size: 14px; }
+
+  .topbar-icons { gap: 12px; }
+  .topbar-icons img {
+    width: 18px;
+    height: 18px;
+    padding: 6px;
+  }
+
+  .dropdown-menu,
+  .notif-dropdown {
+    top: calc(var(--topbar-h) + 6px);
+    right: 8px;
+    width: min(90vw, 260px);
+  }
+
+  @media (max-width: 360px) {
+    .topbar { padding: 0 8px; }
+    .topbar-icons { gap: 8px; }
+    .topbar-icons img { padding: 5px; }
+    .topbar-left img { width: 36px; height: 36px; }
+    .topbar-text .name { font-size: 13px; }
+  }
+}

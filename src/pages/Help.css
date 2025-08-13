@@ -1,0 +1,204 @@
+.help-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* FAQ and contact section styling */
+.faq-section,
+.contact-section {
+    background-color: #f3f4f6;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 0 auto 20px auto;
+    font-size: 14px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.faq-title {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.faq-answer {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.faq-toggle {
+    font-size: 20px;
+}
+
+.live-chat-btn {
+    background: linear-gradient(90deg, #00ffbb, #00a2ff);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Live Chat popup */
+.chat-overlay {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+}
+
+.chat-window {
+  width: 340px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  background: linear-gradient(90deg, #00ffbb, #00a2ff);
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.chat-body {
+  padding: 12px;
+  height: 220px;
+  overflow-y: auto;
+  background: #fafbfc;
+}
+
+.chat-msg {
+  margin-bottom: 10px;
+  line-height: 1.35;
+  font-size: 14px;
+}
+
+.chat-msg.me {
+  text-align: right;
+}
+
+.chat-footer {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #eee;
+  padding: 10px;
+  background: #fff;
+}
+
+.chat-footer input {
+  flex: 1;
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+  padding: 8px 10px;
+  outline: none;
+}
+
+.chat-send {
+  background: #0094ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Dark mode for help page */
+.dark-mode .help-page {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .faq-section,
+.dark-mode .contact-section {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.dark-mode .faq-title {
+  color: #ffffff;
+}
+
+.dark-mode .faq-item {
+  border-bottom: 1px solid #333;
+}
+
+.dark-mode .faq-answer {
+  color: #bbbbbb;
+}
+
+/* Dark mode for live chat */
+.dark-mode .chat-window {
+  background: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode .chat-body {
+  background: #181818;
+  color: #ffffff;
+}
+
+.dark-mode .chat-msg {
+  color: #ffffff;
+}
+
+.dark-mode .chat-footer {
+  background: #1e1e1e;
+  border-top: 1px solid #333;
+}
+
+.dark-mode .chat-footer input {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #ffffff;
+}
+
+.dark-mode .chat-send {
+  background: #006bbf;
+}
+
+/* Keep button and header colors in dark mode */
+.dark-mode .live-chat-btn {
+  background: linear-gradient(90deg, #00ffbb, #00a2ff);
+  color: white;
+}
+
+.dark-mode .chat-header {
+  background: linear-gradient(90deg, #00ffbb, #00a2ff);
+  color: white;
+}
